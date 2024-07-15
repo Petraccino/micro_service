@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "cad039b6-aa8a-4f95-aa8c-00cb43de3a48",
+		"name": "micro-services_school",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29563365",
+		"_collection_link": "https://speeding-zodiac-606364.postman.co/workspace/Personal~628e938d-c16f-4605-866e-1041948a85e8/collection/29563365-cad039b6-aa8a-4f95-aa8c-00cb43de3a48?action=share&source=collection_link&creator=29563365"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/school",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"school"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findSchoolWithStudents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/school/with-student/:school-id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"school",
+						"with-student",
+						":school-id"
+					],
+					"variable": [
+						{
+							"key": "school-id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"{{$randomProductName}}\",\r\n  \"email\": \"{{$randomEmail}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/school/save",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"school",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

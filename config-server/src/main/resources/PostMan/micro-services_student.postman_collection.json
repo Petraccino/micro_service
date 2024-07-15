@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "29ec6695-2259-4eba-aac0-2011a123f72f",
+		"name": "micro-services_student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29563365",
+		"_collection_link": "https://speeding-zodiac-606364.postman.co/workspace/Personal~628e938d-c16f-4605-866e-1041948a85e8/collection/29563365-29ec6695-2259-4eba-aac0-2011a123f72f?action=share&source=collection_link&creator=29563365"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/student",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllBySchoolId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/student/by-school/:school-id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student",
+						"by-school",
+						":school-id"
+					],
+					"variable": [
+						{
+							"key": "school-id",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearer}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\" : \"{{$randomFirstName}}\",\r\n  \"cognome\" : \"{{$randomLastName}}\",\r\n  \"eta\" : {{$randomInt}},\r\n  \"email\" : \"{{$randomEmail}}\",\r\n  \"schoolId\" : 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/student/save",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
